@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — File Secure System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <span class="logo">🔐 File Secure System</span>
+      <div class="topbar-right">
+        <span>Welcome, <strong id="userName">...</strong></span>
+        <button id="logoutButton" class="btn btn-outline btn-small">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Upload section -->
+    <section class="card">
+      <h2>Upload a File</h2>
+      <p class="small-note">Maximum size: 5 MB. Dangerous file types (like .exe) are blocked.</p>
+      <div class="upload-row">
+        <input type="file" id="fileInput" />
+        <button id="uploadButton" class="btn btn-primary">Upload</button>
+      </div>
+      <div id="dashboardMessage" class="message"></div>
+    </section>
+
+    <!-- File list -->
+    <section class="card">
+      <div class="card-header">
+        <h2>My Files</h2>
+        <span id="blockchainStatus" class="small-note">Checking blockchain…</span>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>File Name</th>
+              <th>Size</th>
+              <th>Uploaded</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="filesTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
